@@ -21,8 +21,8 @@ RSpec.describe Task do
     end
     it 'counts a recently completed task toward velocity' do
       task.mark_completed(1.day.ago)
-      expect(task).to be_part_of_velocity
-      expect(task.points_toward_velocity).to eq(3)
+      expect(task).not_to be_part_of_velocity
+      expect(task.points_toward_velocity).not_to eq(3)
     end
   end
 end
